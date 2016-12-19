@@ -2,7 +2,7 @@ package com.solution.sms_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Contacts;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
@@ -63,7 +63,7 @@ public class SendSMSActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
+                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
 
                 startActivityForResult(intent, PICK_CONTACT);
             }
